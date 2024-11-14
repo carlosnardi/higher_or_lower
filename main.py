@@ -30,14 +30,11 @@ def compare_vote(num_a):
 
 score = 0
 a_or_b = 0
-game_over = False
-while not game_over:
-  num_a = randint(0,len(data))
+num_a = randint(0,len(data))
+num_b = randint(0,len(data))
+followers_a = data[num_a]['follower_count']
+followers_b = data[num_b]['follower_count']
+while compare_vote(num_a) != 'c':
   num_b = randint(0,len(data))
-  followers_a = data[num_a]['follower_count']
   followers_b = data[num_b]['follower_count']
-  if compare_vote(num_a) == 'c':
-    game_over = True
-
-    
- 
+  
