@@ -39,7 +39,8 @@ while True:
     num_b = randint(0,len(data)-1)
     followers_b = data[num_b]['follower_count']
   elif result == 'b':
-    num_a = randint(0,len(data)-1)
-    followers_a = data[num_a]['follower_count']
+    num_a = num_b
+    num_b = randint(0,len(data)-1)
+    followers_b = data[num_b]['follower_count']
   else: 
     break
