@@ -27,6 +27,11 @@ def compare_vote(score_points):
     print(f"Sorry. That's wrong. Final score: {score_points}")
   return a_or_b, score_points
 
+def getting_new_data():
+  num_b = randint(0,len(data)-1)
+  followers_b = data[num_b]['follower_count']
+  return num_b, followers_b
+
 score = 0
 a_or_b = 0
 num_a = randint(0,len(data)-1)
@@ -36,11 +41,9 @@ followers_b = data[num_b]['follower_count']
 while True:
   result, score = compare_vote(score)
   if result == 'a':
-    num_b = randint(0,len(data)-1)
-    followers_b = data[num_b]['follower_count']
+    num_b, followers_b = getting_new_data()
   elif result == 'b':
     num_a = num_b
-    num_b = randint(0,len(data)-1)
-    followers_b = data[num_b]['follower_count']
+    num_b, followers_b = getting_new_data() 
   else: 
     break
